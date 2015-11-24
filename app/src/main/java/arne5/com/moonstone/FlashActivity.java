@@ -41,8 +41,9 @@ public class FlashActivity extends Activity {
 		}
 		Switch flashSwitch = (Switch) findViewById(R.id.switch_flash);
 		//default of flash mode  is on
-		flashSwitch.setChecked(true);
+		flashSwitch.setChecked(false);
 		flashSwitch.setOnCheckedChangeListener(new MyCheckedChangeListener());
+		flashSwitch.setText("The Dark Side");
 	}
 
 	private CameraManager mCameraManager;
@@ -152,6 +153,8 @@ public class FlashActivity extends Activity {
 				if (isChecked) {
 					mBuilder.set(CaptureRequest.FLASH_MODE, CameraMetadata.FLASH_MODE_TORCH);
 					mSession.setRepeatingRequest(mBuilder.build(), null, null);
+
+
 				} else {
 					mBuilder.set(CaptureRequest.FLASH_MODE, CameraMetadata.FLASH_MODE_OFF);
 					mSession.setRepeatingRequest(mBuilder.build(), null, null);
