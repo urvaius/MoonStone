@@ -153,11 +153,15 @@ public class FlashActivity extends Activity {
 				if (isChecked) {
 					mBuilder.set(CaptureRequest.FLASH_MODE, CameraMetadata.FLASH_MODE_TORCH);
 					mSession.setRepeatingRequest(mBuilder.build(), null, null);
+					 Switch sw = (Switch) findViewById(R.id.switch_flash);
+					sw.setText("The Light Side");
 
 
 				} else {
 					mBuilder.set(CaptureRequest.FLASH_MODE, CameraMetadata.FLASH_MODE_OFF);
 					mSession.setRepeatingRequest(mBuilder.build(), null, null);
+					Switch sw = (Switch) findViewById(R.id.switch_flash);
+					sw.setText("The Dark Side");
 				}
 			} catch (CameraAccessException e) {
 				e.printStackTrace();
