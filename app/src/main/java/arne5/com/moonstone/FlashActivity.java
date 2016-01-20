@@ -41,7 +41,7 @@ public class FlashActivity extends Activity {
 		}
 		Switch flashSwitch = (Switch) findViewById(R.id.switch_flash);
 		//default of flash mode  is on
-		flashSwitch.setChecked(false);
+		flashSwitch.setChecked(false); //change to true to check this
 		flashSwitch.setOnCheckedChangeListener(new MyCheckedChangeListener());
 		flashSwitch.setText("The Dark Side");
 	}
@@ -77,9 +77,9 @@ public class FlashActivity extends Activity {
 			//get builder
 			try {
 				mBuilder = camera.createCaptureRequest(CameraDevice.TEMPLATE_MANUAL);
-				//flash on, default is on
+				//flash on, default is on  st it to off
 				mBuilder.set(CaptureRequest.CONTROL_AE_MODE, CameraMetadata.CONTROL_AF_MODE_AUTO);
-				mBuilder.set(CaptureRequest.FLASH_MODE, CameraMetadata.FLASH_MODE_TORCH);
+				mBuilder.set(CaptureRequest.FLASH_MODE, CameraMetadata.FLASH_MODE_OFF);  //changed from FLASH_MODE_TORCH
 				List<Surface> list = new ArrayList<Surface>();
 				mSurfaceTexture = new SurfaceTexture(1);
 				Size size = getSmallestSize(mCameraDevice.getId());
