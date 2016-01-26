@@ -4,6 +4,7 @@ package arne5.com.moonstone;
 
 		import android.app.Activity;
 		import android.content.Context;
+		import android.graphics.Color;
 		import android.graphics.SurfaceTexture;
 		import android.hardware.camera2.CameraAccessException;
 		import android.hardware.camera2.CameraCaptureSession;
@@ -16,6 +17,7 @@ package arne5.com.moonstone;
 		import android.util.Size;
 		import android.view.Surface;
 		import android.widget.CompoundButton;
+		import android.widget.RelativeLayout;
 		import android.widget.Switch;
 		import android.widget.Toast;
 
@@ -155,6 +157,11 @@ public class FlashActivity extends Activity {
 					mSession.setRepeatingRequest(mBuilder.build(), null, null);
 					 Switch sw = (Switch) findViewById(R.id.switch_flash);
 					sw.setText("The Light Side");
+					sw.setTextColor(Color.BLACK);
+
+					RelativeLayout rl =(RelativeLayout) findViewById(R.id.relativelayout);
+					rl.setBackgroundResource(R.drawable.rey);
+
 
 
 				} else {
@@ -162,6 +169,9 @@ public class FlashActivity extends Activity {
 					mSession.setRepeatingRequest(mBuilder.build(), null, null);
 					Switch sw = (Switch) findViewById(R.id.switch_flash);
 					sw.setText("The Dark Side");
+					sw.setTextColor(Color.argb(255, 206, 24, 24));
+					RelativeLayout rl =(RelativeLayout) findViewById(R.id.relativelayout);
+					rl.setBackgroundResource(R.drawable.kylo);
 				}
 			} catch (CameraAccessException e) {
 				e.printStackTrace();
