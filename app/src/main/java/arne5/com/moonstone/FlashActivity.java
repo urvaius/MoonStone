@@ -160,7 +160,7 @@ public class FlashActivity extends Activity {
 					sw.setTextColor(Color.BLACK);
 
 					RelativeLayout rl =(RelativeLayout) findViewById(R.id.relativelayout);
-					rl.setBackgroundResource(R.drawable.rey);
+					rl.setBackgroundResource(R.drawable.padme);
 
 
 

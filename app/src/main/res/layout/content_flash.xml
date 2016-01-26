@@ -24,6 +24,6 @@
                 android:id="@+id/switch_flash"
                 android:showText="false"
                 android:shadowColor="#380303"
-                android:textColor="#ce1818" android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"/>
+                android:textColor="#ce1818"
+                android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
 </RelativeLayout>
