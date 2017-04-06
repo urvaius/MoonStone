@@ -2,6 +2,7 @@ package arne5.com.moonstone;
 
 
 
+		import android.Manifest;
 		import android.app.Activity;
 		import android.content.Context;
 		import android.graphics.Color;
@@ -14,6 +15,7 @@ package arne5.com.moonstone;
 		import android.hardware.camera2.CameraMetadata;
 		import android.hardware.camera2.CaptureRequest;
 		import android.os.Bundle;
+		import android.support.v4.content.ContextCompat;
 		import android.util.Size;
 		import android.view.Surface;
 		import android.widget.CompoundButton;
@@ -32,10 +34,20 @@ public class FlashActivity extends Activity {
 	private CaptureRequest.Builder mBuilder;
 	private CameraDevice mCameraDevice;
 
+
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_flash);
+
+		//permissions
+		
+
+		int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+
+
 		try {
 			init();
 		} catch (CameraAccessException e) {
